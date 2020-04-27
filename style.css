@@ -38,6 +38,15 @@ body {
     transform: scale(1);
 }
 
+.container.grow {
+    animation: grow 3s linear forwards
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards
+}
+
+
 .circle {
     background-color: #301934;
     height: 100%;
@@ -85,5 +94,26 @@ body {
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
     }
 }
