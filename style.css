@@ -39,10 +39,12 @@ body {
 }
 
 .container.grow {
+    -webkit-animation: grow 3s linear forwards;
     animation: grow 3s linear forwards
 }
 
 .container.shrink {
+    -webkit-animation: shrink 3s linear forwards;
     animation: shrink 3s linear forwards
 }
 
@@ -56,6 +58,12 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+@supports not (background: conic-gradient(#bca0dc 0%, #b491c8 40%, #fefefe 40%, #fefefe 60%, #663a82 60%, #52307c 100%)) {
+    .gradient-circle {
+        background: #52307c;
+    }
 }
 
 .gradient-circle {
@@ -83,37 +91,82 @@ body {
     left: 140px;
     width: 20px;
     height: 190px;
+    -webkit-animation: rotate 7.5s linear forwards infinite;
     animation: rotate 7.5s linear forwards infinite;
+    -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
 }
 
-@keyframes rotate {
+@-webkit-keyframes rotate {
     from {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 
     to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes grow {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
     }
 }
 
 @keyframes grow {
     from {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
 
     to {
+        -webkit-transform: scale(1.2);
         transform: scale(1.2);
+    }
+}
+
+
+@-webkit-keyframes shrink {
+    from {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }
 
 
 @keyframes shrink {
     from {
+        -webkit-transform: scale(1.2);
         transform: scale(1.2);
     }
 
     to {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
 }

@@ -15,7 +15,7 @@ const breathAnimation = () => {
         text.innerText = "Hold"
 
         setTimeout(() => {
-            text.innerText = "and breath out"
+            text.innerText = "and breath out..."
             container.className = "container shrink"
         }, holdTime)
     }, breatheTime)
